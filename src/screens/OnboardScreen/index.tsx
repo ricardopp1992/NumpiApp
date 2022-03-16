@@ -1,10 +1,18 @@
-import React from 'react'
-import {Text, View } from 'react-native'
+import React, { FC } from 'react'
+import { View } from 'react-native'
 
-const OnboardScreen = () => {
+import OnboardSlideContent from '@components/OnboardSlideContent'
+import { OnboardNavigationScreens, OnboardScreenProps } from '@interfaces/screens'
+
+const OnboardScreen: FC<OnboardScreenProps> = ({ navigation }) => {
+
+  const navigateToLoginPage = () => {
+    navigation.navigate(OnboardNavigationScreens.SIGN_IN_SCREEN)
+  }
+
   return (
     <View>
-      <Text>OnboardScreen</Text>
+      <OnboardSlideContent navigateToLoginPage={navigateToLoginPage} />
     </View>
   )
 }

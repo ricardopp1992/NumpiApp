@@ -1,14 +1,14 @@
 import React from 'react'
-import { Text, View } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import 'react-native-gesture-handler'
+
+import MenuDrawerNavigator from '@navigators/MenuDrawerNavigator'
+import OnboardNavigatorStack from '@navigators/OnboardNavigatorStack';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <View>
-        <Text>Hello</Text>
-      </View>
+      <OnboardNavigatorStack />
     </NavigationContainer>
   )
 };

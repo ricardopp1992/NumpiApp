@@ -1,3 +1,4 @@
+import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 
 import HomeScreen from '@screens/HomeScreen'
@@ -8,7 +9,10 @@ const { HOME_SCREEN } = MenuDrawerNavigationEnum
 const { Navigator, Screen } = createDrawerNavigator<MenuDrawerNavigation>()
 
 const MenuDrawerNavigator = () => (
-  <Navigator>
+  <Navigator screenOptions={{
+    headerShown: false
+    }}
+  >
     <Screen name={HOME_SCREEN} component={HomeScreen} />
   </Navigator>
 )

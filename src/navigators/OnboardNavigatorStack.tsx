@@ -1,4 +1,5 @@
-import { createStackNavigator } from '@react-navigation/stack'
+import React from 'react'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import OnboardScreen from '@screens/OnboardScreen'
 import SignInScreen from '@screens/SignInScreen'
@@ -13,11 +14,13 @@ const {
   DRAWER_NAVIGATOR,
 } = OnboardNavigationScreens
 
-const { Navigator, Screen } = createStackNavigator<IOnboardNavigationStack>()
+const { Navigator, Screen } = createNativeStackNavigator<IOnboardNavigationStack>()
 
 const OnboardNavigatorStack = () => (
-  <Navigator>
-    <Screen name={ONBOARD_SCREEN} component={OnboardScreen} />
+  <Navigator screenOptions={{
+    headerShown: false
+  }}>
+    <Screen name={ONBOARD_SCREEN}  component={OnboardScreen} />
     <Screen name={SIGN_IN_SCREEN} component={SignInScreen} />
     <Screen name={SIGN_UP_SCREEN} component={SignUpScreen} />
     <Screen name={DRAWER_NAVIGATOR} component={MenuDrawerNavigator} />
